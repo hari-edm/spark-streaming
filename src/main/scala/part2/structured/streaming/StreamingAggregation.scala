@@ -32,7 +32,7 @@ object StreamingAggregation {
 
     linesCount.writeStream
       .format("console")
-      .outputMode(OutputMode.Complete())
+      .outputMode(OutputMode.Update())
       .trigger(Trigger.ProcessingTime(10.seconds))
       .start()
       .awaitTermination()
